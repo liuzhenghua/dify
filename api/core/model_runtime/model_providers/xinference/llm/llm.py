@@ -495,8 +495,8 @@ class XinferenceAILargeLanguageModel(LargeLanguageModel):
                 **generate_config,
             )
             if stream:
-                if tools and len(tools) > 0:
-                    raise InvokeBadRequestError('xinference tool calls does not support stream mode')
+                # if tools and len(tools) > 0:
+                #     raise InvokeBadRequestError('xinference tool calls does not support stream mode')
                 return self._handle_chat_stream_response(model=model, credentials=credentials,
                                                          prompt_messages=prompt_messages,
                                                          tools=tools, resp=resp)
